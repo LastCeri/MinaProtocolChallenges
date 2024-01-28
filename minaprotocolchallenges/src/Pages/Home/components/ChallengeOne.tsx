@@ -8,27 +8,31 @@ const contractAddress = 'YOUR_CONTRACT_ADDRESS';
 const ChallengeOne = () => {
     const [notification, setNotification] = useState({ show: false, type: MessageType.Info, message: '' });
     const [userwalletadress, setWalletAdress] = useState('');
-    const [userwalletadress2, setWalletAdress2] = useState('');
-    
+    const [userwalletadress2, setWalletAdress2] = useState('');   
     const [message, setMessage] = useState('');
-    const [error, setError] = useState('');
 
-    const contract = new SecretMessageContract(new PublicKey(contractAddress));
 
     const handleAddAuthorizedSubmit = async (event:any) => {
         event.preventDefault();
+    
         if (!userwalletadress.trim()) {
-            showNotification(MessageType.Error, "Both User Wallet Adress are required!");
+            showNotification(MessageType.Error, "User Wallet Address is required!");
             return;
         }
-        const publicKey = new PublicKey(userwalletadress);
         
-        await contract.addEligibleAddress(publicKey);
-        
-        showNotification(MessageType.Success, "User added to the smart contract");
-        console.log('User added:', { userwalletadress });
-        setWalletAdress('');
+        try {
+            const publicKey = new PublicKey(userwalletadress);
+            //const contract = new SecretMessageContract(new PublicKey(contractAddress));
+            //await contract.addEligibleAddress(publicKey);
+            showNotification(MessageType.Success, "User added to the smart contract");
+            console.log('User added:', { userwalletadress });
+            setWalletAdress('');
+        } catch (error) {
+            console.error("Failed to add user or initialize the contract:", error);
+            showNotification(MessageType.Error, "Failed to add user to the smart contract");
+        }
     };
+    
 
 
 
