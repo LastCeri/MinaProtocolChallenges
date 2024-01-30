@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Notification, { MessageType } from '../../../ThemeParts/Notification/Notification';
 import { SmartContract, PublicKey } from 'o1js';
-import SecretMessageContract from '../../../Challenges/Challenge-1/SecretMessageContract';
+import {LMPChallenge1Contract}  from '../../../Challenges/Challenge-1/MessageContract';
 
 const contractAddress = 'YOUR_CONTRACT_ADDRESS';
 
