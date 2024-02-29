@@ -1,0 +1,21 @@
+{
+  "version": 1,
+  "deployAliases": {
+    "berkeley": {
+      "url": "https://proxy.berkeley.minaexplorer.com/graphql",
+      "keyPath": "keys/berkeley.json",
+      "feepayerKeyPath": "C:\\Users\\ehada/.cache/zkapp-cli/keys/b62qojmoityjvhgyngjyz8prkaxibnc8xbjj19fmdeas9m5ntmrhqh2.json",
+      "feepayerAlias": "b62qojmoityjvhgyngjyz8prkaxibnc8xbjj19fmdeas9m5ntmrhqh2",
+      "fee": "0.1",
+      "smartContract": "Add"
+    },
+    "lmpchallenge1contract": {
+      "url": "https://proxy.berkeley.minaexplorer.com/graphql",
+      "keyPath": "keys/lmpchallenge1contract.json",
+      "feepayerKeyPath": "C:\\Users\\ehada/.cache/zkapp-cli/keys/b62qojmoityjvhgyngjyz8prkaxibnc8xbjj19fmdeas9m5ntmrhqh2.json",
+      "feepayerAlias": "b62qojmoityjvhgyngjyz8prkaxibnc8xbjj19fmdeas9m5ntmrhqh2",
+      "fee": "1",
+      "smartContract": "LMPChallenge1Contract"
+    }
+  }
+}
